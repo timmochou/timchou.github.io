@@ -50,3 +50,45 @@ function pageScrollFunction(){
 		homeSection.classList.remove('active');
 	}
 }
+
+function hideAllSections() {
+	document.querySelector('.front-end').classList.remove('active');
+	document.querySelector('.front-end').classList.add('hidden');
+	document.querySelector('.back-end').classList.remove('active');
+	document.querySelector('.back-end').classList.add('hidden');
+	document.querySelector('.Other').classList.remove('active');
+	document.querySelector('.Other').classList.add('hidden');
+}
+
+function FrontClick() {
+	hideAllSections();
+	document.querySelector('.front-end').classList.remove('hidden');
+	document.querySelector('.front-end').classList.add('active');
+}
+
+function BackClick() {
+	hideAllSections();
+	document.querySelector('.back-end').classList.remove('hidden');
+	document.querySelector('.back-end').classList.add('active');
+}
+
+function OtherClick() {
+	hideAllSections();
+	document.querySelector('.Other').classList.remove('hidden');
+	document.querySelector('.Other').classList.add('active');
+}
+
+
+// 當頁面加載完成時，預設顯示 Front-end
+document.addEventListener('DOMContentLoaded', function() {
+	// 設置進度條
+	const bars = document.querySelectorAll('.bar-front, .bar-back, .bar-other');
+	bars.forEach(bar => {
+		const percent = bar.getAttribute('data-percent');
+		bar.style.width = percent;
+	});
+
+	// 預設顯示 Front-end
+	document.querySelector('.front-end').classList.remove('hidden');
+	document.querySelector('.front-end').classList.add('active');
+});

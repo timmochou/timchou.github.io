@@ -8,14 +8,14 @@ html{
 	scroll-behavior: smooth;
 
 	/* Variables For Storing Colors */
-	--primary-base-clr: #D8C4B6;
-	--primary-light-clr: #1e90ff;
-	--bg-clr-1: #C1D0B5;
-	--bg-clr-2: #FFF1DC;
-	--main-heading-clr: #080202;
-	--secondary-heading-clr: #146C94;
-	--text-clr: #213555;
-	--dark-text-clr: #080202;
+	--primary-base-clr: #81D8D0;
+	--primary-light-clr: #B2F0ED;
+	--bg-clr-1: #E0F5F4;
+	--bg-clr-2: #FFFFFF;
+	--main-heading-clr: #2B4F60;
+	--secondary-heading-clr: #367588;
+	--text-clr: #4A6670;
+	--dark-text-clr: #1B3238;
 }
 body{
 	width: 100%;
@@ -116,7 +116,7 @@ section.home{
 	}
 }
 .home .navbar .logo img{
-	width: 150px;
+	width: 50px;
 	height: auto;
 }
 .home .navbar .nav-list{
@@ -204,7 +204,7 @@ section.home{
 	margin-right: 10px;
 }
 .hero-text .type-container .text2{
-	color: #fc852b;
+	color: #81D8D0;
 	font-weight: bold;
 	padding-right: 3px;
 }
@@ -216,7 +216,7 @@ section.home{
 	top: 0;
 	left: 0;
 	background-color: var(--bg-clr-2);
-	border-left: 2px solid #fc852b;
+	border-left: 2px solid #81D8D0;
 	animation: animationOne 5s steps(1000) infinite,
 	animationTwo 5s infinite;
 }
@@ -236,25 +236,25 @@ section.home{
 }
 @keyframes animationTwo{
 	30%{
-		border-left: 2px solid #fc852b;
+		border-left: 2px solid #81D8D0;
 	}
 	38%{
 		border-left: 2px solid var(--bg-clr-2);
 	}
 	46%{
-		border-left: 2px solid #fc852b;
+		border-left: 2px solid #81D8D0;
 	}
 	54%{
 		border-left: 2px solid var(--bg-clr-2);
 	}
 	62%{
-		border-left: 2px solid #fc852b;
+		border-left: 2px solid #81D8D0;
 	}
 	70%{
 		border-left: 2px solid var(--bg-clr-2);
 	}
 	80%{
-		border-left: 2px solid #fc852b;
+		border-left: 2px solid #81D8D0;
 	}
 }
 
@@ -468,7 +468,8 @@ section.about{
 /*   === About Section Styling Ends ===   */
 
 /*   === Skills Section Styling Starts ===   */
-section.skills{
+section.skills {
+	position: relative;
 	width: 100%;
 	padding: 50px 8%;
 	background-color: var(--bg-clr-1);
@@ -524,7 +525,7 @@ section.education{
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	flex-basis: 35%;
+	flex-basis: 30%;
 	text-align: center;
 	padding: 15px 15px;
 	background-color: var(--bg-clr-2);
@@ -706,7 +707,7 @@ section.projects{
 	display: block;
 }
 #projectborder{
-    width: 500px;        /* 固定宽度 */
+    width: 500px;        /* 定宽度 */
     height: 300px;  
 	border: 2px solid white; 
 }
@@ -985,4 +986,233 @@ section.page-footer{
 		text-decoration: underline;
 	}
 	
+}
+
+.hidden {
+  display: none !important;
+}
+
+.active {
+  display: flex !important;
+}
+
+.skill-chart {
+  margin: 20px 0;
+}
+
+.skill-chart h5 {
+  color: black;  /* 改為黑色文字 */
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* 通用进度条样式 */
+.bar {
+  background-color: #f0f0f0;  
+  height: 30px;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+/* 前端技能进度条 */
+.bar-front {
+  background-color: #7BC67B;  /* 绿色 */
+  height: 100%;
+  position: relative;
+  transition: width 1.5s ease-in-out;
+}
+
+/* 后端技能进度条 */
+.bar-back {
+  background-color: #5B9BD5;  /* 蓝色 */
+  height: 100%;
+  position: relative;
+  transition: width 1.5s ease-in-out;
+}
+
+/* 其他技能进度条 */
+.bar-other {
+  background-color: #ED7D31;  /* 橙色 */
+  height: 100%;
+  position: relative;
+  transition: width 1.5s ease-in-out;
+}
+
+/* 所有进度条的百分比文字样式 */
+.bar-front::after,
+.bar-back::after,
+.bar-other::after {
+  content: attr(data-percent);
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* 技能標題樣式 */
+.skill-title {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+/* 按鈕樣式 */
+.skill-buttons {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.skill-buttons button {
+  padding: 10px 30px;
+  border: 2px solid #333;
+  background: transparent;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.skill-buttons button:hover {
+  background-color: #333;
+  color: white;
+}
+
+/* 技能區塊的容器 */
+.front-end, .back-end, .Other {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 50px;
+  padding: 30px;
+}
+
+/* 左側文字區域 */
+.skill-text {
+  flex: 1;
+  max-width: 45%;
+}
+
+.skill-text h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.skill-text p {
+  line-height: 1.6;
+  color: #333;
+}
+
+/* 右側技能圖表區域 */
+.skill-chart {
+  flex: 1;
+  max-width: 45%;
+}
+
+.skill-chart h5 {
+  color: black;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.bar {
+  background-color: #f0f0f0;
+  height: 30px;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.bar-front, .bar-back, .bar-other{
+  background-color: #7BC67B;
+  height: 100%;
+  position: relative;
+  transition: width 1.5s ease-in-out;
+}
+
+.bar-front::after, .bar-back::after, .bar-other::after {
+  content: attr(data-percent);
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+
+/* 按鈕容器樣式 */
+.skill-btn {
+	position: absolute;  /* 改为absolute以相对于父元素定位 */
+	bottom: 70px;
+	left: 50%;
+	transform: translateX(-50%);  /* 水平居中 */
+	text-align: center;
+	width: 100%;  /* 确保容器宽度充满父元素 */
+  }
+
+.box.bg-1 {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* 基礎按鈕樣式 */
+.button {
+  min-width: 150px;
+  padding: 1em 2em;
+  border: none;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  position: relative;
+  transition: all 0.3s;
+}
+
+/* 邊框樣式 */
+.button--border-thin {
+  border: 1px solid #213555;
+}
+
+/* 文字樣式 */
+.button--text-thick {
+  font-weight: 600;
+}
+
+/* Ujarak 效果 */
+.button--ujarak {
+  transition: border-color 0.4s, color 0.4s;
+}
+
+.button--ujarak::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #213555;
+  z-index: -1;
+  opacity: 0;
+  transform: scale3d(0.7, 1, 1);
+  transition: transform 0.4s, opacity 0.4s;
+}
+
+.button--ujarak:hover {
+  color: #fff;
+  border-color: #213555;
+}
+
+.button--ujarak:hover::before {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
 }

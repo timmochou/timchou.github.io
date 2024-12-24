@@ -2,7 +2,7 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-32x32.png" alt="favicon">
+	<link rel="icon" type="image/png" sizes="16x16" href="./images/logo.ico" alt="favicon">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Yen-Ting Chou</title>
@@ -15,7 +15,7 @@
 	<!--   === Navbar Starts ===   -->
 	<nav class="navbar">
 		<div class="logo">
-			<a href="#home"><img src="images/logo.png" alt="logo-huiyu"></a>
+			<a href="#home"><img src="images/logo.ico" alt="logo-tim"></a>
 		</div>
 		<ul class="nav-list">
 			<li><a href="#home">Home</a></li>
@@ -25,7 +25,7 @@
 			<li><a href="#projects">projects</a></li>
 		</ul>
 		<a href="#contact" class="contact-btn-wrapper">
-			<a href="https://www.linkedin.com/in/hui-yu-chen-tw/" target="_blank"><button class="btn contact-btn">Contact</button></a>
+			<a href="https://www.linkedin.com/in/yentingchou/" target="_blank"><button class="btn contact-btn">Contact</button></a>
 		</a>
 		<div class="menu-btn">
 			<i class="fa-solid fa-bars-staggered"></i>
@@ -49,16 +49,7 @@
 		<!--   === Hero Text Ends ===   -->
 		<!--   === Hero Image Starts ===   -->
 		<div class="hero-img">
-			<img src="images/nollie.png" alt="nollie">
-			<div class="images-box">
-				<div class="child-img-box"><img src="images/powerbi.jpg" alt="powerbi"></div>
-				<div class="child-img-box"><img src="images/css.png" alt="css"></div>
-				<div class="child-img-box"><img src="images/js.png" alt="js"></div>
-				<div class="child-img-box"><img src="images/python.png" alt="python"></div>
-				<div class="child-img-box"><img src="images/java.png" alt="java"></div>
-				<div class="child-img-box"><img src="images/tableau.png" alt="tableau"></div>
-				<div class="child-img-box"><img src="images/Splunk_logo.png" alt="splunk"></div>
-			</div>
+			<img src="images/tim_work.JPG" alt="nollie">
 		</div>
 		<!--   === Hero Image Ends ===   -->
 	</div>
@@ -99,7 +90,7 @@
 				</div>
 			</div>
 			<div class="social-media">
-				<a href="https://www.linkedin.com/in/hui-yu-chen-tw/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+				<a href="https://www.linkedin.com/in/yentingchou/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
 				<a href="https://github.com/nolliechyTW" target="_blank"><i class="fa-brands fa-github"></i></a>
 				<a href="https://public.tableau.com/app/profile/nollie.chen" target="_blank"><i class="fa-solid fa-square-poll-vertical"></i></a>
 				<a href="https://medium.com/@nolliechy-exploring" target="_blank"><i class="fa-brands fa-medium"></i></a>
@@ -150,46 +141,122 @@
 </section>
 <!--   *** About Section Ends ***   -->
 
-<!--   *** Skills Section Starts ***   -->
-<section class="skills" id="skills">
+<!-- *** Skills Section Starts *** -->
+<section class="skills" id="skills" style="background-color: #f5f5f5; min-height: 100vh; padding: 50px 0;">
 	<!--   === Section Header Starts ===   -->
 	<header class="section-heading">
+		<br/>
 		<h1>SKILLS</h1>
-		<p>Recently, I've been working on JavaScript and React.js.</p>
 	</header>
 	<!--   === Section Header Ends ===   -->
-	<!--   === Skills Contents Starts ===   -->
-	<div class="skills-contents">
-		
-		<div class="skill-box">
-			<div class="skill-name">Web Development</div>
+	
+	<div class="myskill visibility" id="myskill">
+		<div class="front-end active">
+		  <div class="skill-text">
+			<h2>FRONT-END</h2>
+			<p>
+			  第一次接觸網頁前端是大學二年級在課程當中學到<br>
+			  並且最後有製作出一個簡單小成品。<br>
+			  <br>
+			  因為大三的專題開始接觸大量的Java(AndroidStudio)以及JavaScript/Juery/PHP。<br>
+			  <br>
+			  目前因為參與其他專案開發，當中自學到很多新知識<br>
+			  例如Webpack/RWD/Vue.js框架等等。
+			</p>
+		  </div>
+		  <div class="skill-chart">
+			<h5>HTML / CSS / RWD</h5>
+			<div class="bar">
+			  <div class="bar-front" data-percent="83%"></div>
+			</div>
+			<h5>JAVASCRIPT / JQUERY</h5>
+			<div class="bar">
+			  <div class="bar-front" data-percent="70%"></div>
+			</div>
+			<h5>BOOTSTRAP</h5>
+			<div class="bar">
+			  <div class="bar-front" data-percent="55%"></div>
+			</div>
+			<h5>VUE.JS(Learning...)</h5>
+			<div class="bar">
+			  <div class="bar-front" data-percent="30%"></div>
+			</div>
+			<h5>ANDROID STUDIO(Java)</h5>
+			<div class="bar">
+			  <div class="bar-front" data-percent="70%"></div>
+			</div>
+		  </div>
 		</div>
-		<div class="skill-box">
-			<div class="skill-details">HTML, CSS, JavaScript, Java, Node.js, React.js, Express.js, API...</div>
+		<div class="back-end hidden">
+		  <div class="skill-text">
+			<h2>BACK-END</h2>
+			<p>
+			  Javascript/Firebase的Authentication、Database、Storge及架設Hosting等都相當熟悉。<br>
+			  <br>PHP/Mysql的新增/刪除/修改/查詢及資料表關聯都有撰寫過。<br>
+			  <br>Python則是在課程中學習到並且透過比賽更加深入了解。<br>
+	
+			</p>
+		  </div>
+		  <div class="skill-chart">
+			<h5>Javascript/ FIREBASE</h5>
+			<div class="bar">
+			  <div class="bar-back" data-percent="70%"></div>
+			</div>
+			<h5>PHP/ MYSQL</h5>
+			<div class="bar">
+			  <div class="bar-back" data-percent="45%"></div>
+			</div>
+			<h5>PYTHON</h5>
+			<div class="bar">
+			  <div class="bar-back" data-percent="60%"></div>
+			</div>
+		  </div>
 		</div>
-		<div class="skill-box">
-			<div class="skill-name">Data Analytics</div>
+		<div class="Other hidden">
+		  <div class="skill-text">
+			<h2>OTHER</h2>
+			<p>
+			  熟悉Github/Gitlab基本的指令操作<br>
+			  ex.git branch/checkout/status/commit/push等等。
+			  <br>
+			  <br>API處於自學中，嘗試利用open data做基本的測試。<br>
+			  <br>Selenium自動化測試，曾使用Katalon寫過類似自動打卡的小成品，除了WebUI.click、waitForElementVisible、setText等特定函式���，也使用的迴圈陣列等等去執行程式。
+			</p>
+		  </div>
+		  <div class="skill-chart">
+			<h5>GITHUB / GITLAB</h5>
+			<div class="bar">
+			  <div class="bar-other" data-percent="60%"></div>
+			</div>
+			<h5>Restful API串接 (Learning...)</h5>
+			<div class="bar">
+			  <div class="bar-other" data-percent="30%"></div>
+			</div>
+			<h5>SELENIUM</h5>
+			<div class="bar">
+			  <div class="bar-other" data-percent="60%"></div>
+			</div>
+		  </div>
 		</div>
-		<div class="skill-box">
-			<div class="skill-details">Python, SQL, Tableau, SPSS</div>
+		<div class="skill-btn">
+		  <div class="box bg-1">
+			<button class="button button--ujarak button--border-thin button--text-thick"
+			  onclick="FrontClick();">Front-End</button>
+			<button class="button button--ujarak button--border-thin button--text-thick"
+			  onclick="BackClick()">Back-End</button>
+			<button class="button button--ujarak button--border-thin button--text-thick"
+			  onclick="OtherClick();">Other</button>
+		  </div>
 		</div>
-		<div class="skill-box">
-			<div class="skill-name">Information Security</div>
-		</div>
-		<div class="skill-box">
-			<div class="skill-details">Splunk</div>
-		</div>
-
-	</div>
-	<!--   === Skills Contents Ends ===   -->
+	  </div>
 </section>
-<!--   *** Skills Section Ends ***   -->
+<!-- *** Skills Section Ends *** -->
 
 <!--   *** CTA Section Starts ***   -->
 <section class="CTA">
 	<p>Have any Ideas in Mind?</p>
 	<h1>Just Say Hello!</h1>
-	<a href="https://www.linkedin.com/in/hui-yu-chen-tw/" target="_blank"><button class="btn CTA-btn">Hire Me</button></a>
+	<a href="https://www.linkedin.com/in/yentingchou/" target="_blank"><button class="btn CTA-btn">Hire Me</button></a>
 </section>
 <!--   *** CTA Section Ends ***   -->
 
@@ -200,26 +267,36 @@
 	<header class="section-heading">
 		<br/>
 		<h1>EDUCATION</h1>
-		<p id="wide">Acquired a dual degree and a minor at the esteemed university in Taiwan; pursuing a master's degree at Penn.</p>
+		<p id="wide">Acquired a bachelor's degree at the esteemed university in Taiwan; pursuing a master's degree at U.S.</p>
 	</header>
 	<!--   === Section Header Ends ===   -->
 	<!--   === Education Contents Starts ===   -->
 	<div class="education-contents">
 		<div class="education-box">
-			<img src="./images/penn.jpg" alt="Penn">
+			<img src="./images/NTPU.png" alt="ntpu">
+			<h2>Major in Public Finance</h2>
+            <br>
+			<h3>National Taipei University</h3>
 			<br>
-			<h2>M.S. in Computer and Information Technology</h2>
-			<br>
-			<h3>Univeristy of Pennsylvania</h3>
-			<br><br><br>			
+            <p>Honor Graduate; 2022-2023 Academic Excellence Awards</p>
+            <br><br>			
 		</div>
 		<div class="education-box">
-			<img src="./images/ntpu.jpg" alt="ntpu">
-			<h2>Dual Major in Finance and Business Administration <br>Minor in Foreign Languages and Applied Linguistics</h2>
+			<img src="./images/finance.png" alt="finance">
+			<h2>Non-Degree Bachelor Program <br>in Finance</h2>
 			<br>
-			<h3>National Taipei University, GPA: 3.9 / 4.0</h3>
+			<h3>National Taipei University</h3>
 			<br>
-			<p>Honor Graduate; 5 Academic Excellence Awards</p>
+            <br><br><br>	
+		</div>
+        <div class="education-box">
+			<img src="./images/exploration.png" alt="exploration">
+			<h2>Non-Degree Bachelor Program <br> in Career Exploration and <br>Innovation and Entrepreneurship</h2>
+			<br>
+			<h3>National Taipei University</h3>
+			<br>
+			<p></p>
+            <br><br><br>	
 		</div>
 	</div>
 	<!--   === Education Contents Ends ===   -->
@@ -317,20 +394,6 @@
 			
 		</div>
 
-		<div class="projects-post projects-post3">
-			<a href="https://github.com/nolliechyTW/Taipei-YouBike-by-District"  target="_blank">
-			<img id="projectborder" src="images/project3.png" alt="project3">
-			</a>
-			<div class="post-date">
-				<span>02/04/2023</span>
-			</div>
-			<div class="post-desc">
-				<h2>Taipei on Two Wheels</h2>
-				<span style="font-weight: bold; color: var(--secondary-heading-clr);">Python/Tableau/Google Colab</span>
-				<p>Use Python to clean the json data and visualize the data using Tableau.</span></p>
-			</div>			
-		</div>
-
 	</div>
 	<!--   === Projects Contents Ends ===   -->
 </section>
@@ -412,7 +475,7 @@
 
 <!--   *** Page Footer Starts ***   -->
 <section class="page-footer">
-	<p>© 2023 Created by Hui-Yu Chen. All rights reserved.</p>
+	<p>© 2024 Created by Yen-Ting Chou. All rights reserved.</p>
 </section>
 <!--   *** Page Footer Ends ***   -->
 
