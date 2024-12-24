@@ -344,9 +344,26 @@ section.about{
 .about .about-contents{
 	display: flex;
 	justify-content: space-between;
+	gap: 2rem;
 }
-.about-contents .about-info{
-	flex-basis: 55%;
+.about-info {
+	flex: 1;
+}
+.about-right {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+.about-personal-info {
+	background: #f5f5f5;
+	padding: 1.5rem;
+	border-radius: 8px;
+}
+.social-media {
+	display: flex;
+	gap: 1rem;
+	justify-content: flex-start;
 }
 .about-contents .about-info p{
 	color: var(--text-clr);
@@ -400,7 +417,9 @@ section.about{
 	text-align: center;
 	margin-right: 15px;
 	border-radius: 50%;
-	background-color: #ffffff;
+	background-color: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
 	transition: 0.3s;
 }
 .about-info .social-media a i{
@@ -473,6 +492,8 @@ section.skills {
 	width: 100%;
 	padding: 50px 8%;
 	background-color: var(--bg-clr-1);
+	background-color: #f5f5f5;
+	min-height: 100vh;
 }
 .skills .section-heading p{
 	color: var(--text-clr);
@@ -1183,7 +1204,7 @@ section.page-footer{
   border: 1px solid #213555;
 }
 
-/* 文字樣式 */
+/* 字樣式 */
 .button--text-thick {
   font-weight: 600;
 }
@@ -1215,4 +1236,202 @@ section.page-footer{
 .button--ujarak:hover::before {
   opacity: 1;
   transform: translate3d(0, 0, 0);
+}
+
+.projects-contents {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    overflow-x: hidden; /* 防止水平滾動 */
+}
+
+.projects-post {
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* 改為垂直排列 */
+    gap: 2rem;
+    background: #fff;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.project-media {
+    width: 100%;
+}
+
+.project-media video {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.project-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-info h2 {
+    color: #1e3d59;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.tech-stack {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+
+.tech-tag {
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    background-color: #f0f0f0;
+    color: #1e3d59;
+    font-size: 0.9rem;
+}
+
+.project-description {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.post-date {
+    margin-top: auto;
+    color: #888;
+    font-size: 0.9rem;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .projects-post {
+        flex-direction: column;
+    }
+    
+    .project-media, .project-info {
+        width: 100%;
+    }
+}
+
+
+.timeline-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.timeline-container::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background: #213555;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+
+.timeline-dot {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    background: #213555;
+    border-radius: 50%;
+    right: -8px;
+    top: 15px;
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+    left: -8px;
+}
+
+.timeline-content {
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.timeline-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.timeline-header img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin-right: 15px;
+}
+
+.timeline-header h3 {
+    margin: 0;
+    color: #213555;
+}
+
+.date {
+    color: #666;
+    font-size: 0.9em;
+    margin-left: auto;
+}
+
+.timeline-btn {
+    margin-top: 15px;
+    background: #213555;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.timeline-btn:hover {
+    background: #4F709C;
+}
+
+@media screen and (max-width: 768px) {
+    .timeline-container::after {
+        left: 31px;
+    }
+    
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+    
+    .timeline-item:nth-child(even) {
+        left: 0;
+    }
+    
+    .timeline-item:nth-child(even) .timeline-dot {
+        left: 23px;
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-dot {
+        left: 23px;
+    }
 }
