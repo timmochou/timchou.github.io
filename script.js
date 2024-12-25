@@ -92,3 +92,35 @@ document.addEventListener('DOMContentLoaded', function() {
 	document.querySelector('.front-end').classList.remove('hidden');
 	document.querySelector('.front-end').classList.add('active');
 });
+
+// 等待 DOM 完全加载
+document.addEventListener('DOMContentLoaded', function() {
+	// 获取所有时间线导航按钮
+	const timelineButtons = document.querySelectorAll('.timeline-nav-btn');
+	
+	// 为每个按钮添加点击事件监听器
+	timelineButtons.forEach(button => {
+		button.addEventListener('click', function() {
+			// 移除所有按钮的 active 类
+			timelineButtons.forEach(btn => btn.classList.remove('active'));
+			
+			// 为当前点击的按钮添加 active 类
+			this.classList.add('active');
+			
+			// 获取当前按钮对应的年份
+			const year = this.getAttribute('data-year');
+			
+			// 获取所有内容项
+			const contentItems = document.querySelectorAll('.timeline-content-item');
+			
+			// 隐藏所有内容项
+			contentItems.forEach(item => item.classList.remove('active'));
+			
+			// 显示对应年份的内容项
+			const targetContent = document.querySelector(`.timeline-content-item[data-year="${year}"]`);
+			if (targetContent) {
+				targetContent.classList.add('active');
+			}
+		});
+	});
+});
