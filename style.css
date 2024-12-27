@@ -1559,3 +1559,106 @@ section.page-footer{
     flex: 1;
     padding: 20px;
 }
+
+  /* --- other experience section started --- */
+  .other-experience {
+	padding: 20px;
+  }
+
+  .section-heading h1 {
+	text-align: center;
+	letter-spacing: 2px;
+  }
+
+  /* --- 活動分類按鈕 --- */
+  .activity-buttons {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+	margin: 20px 0;
+  }
+
+  .activity-btn {
+	padding: 10px 20px;
+	background-color: #ddd;
+	border: none;
+	cursor: pointer;
+	font-weight: bold;
+	transition: background-color 0.3s;
+  }
+
+  .activity-btn.active,
+  .activity-btn:hover {
+	background-color: #999;
+	color: #fff;
+  }
+
+  /* --- 橫向時間軸容器 --- */
+  .horizontal-timeline-container {
+	width: 90%;
+	width: 90%;
+	margin: 0 auto;
+	overflow-x: auto; /* 允許橫向滾動 */
+	white-space: nowrap; /* 防止內部元素換行 */
+  }
+
+  .horizontal-timeline-wrapper {
+	display: flex;
+	gap: 40px;
+  }
+
+  /* --- 單一活動區塊 (對應每個分類) --- */
+  .horizontal-timeline-item {
+	display: none; /* 預設隱藏 */
+	flex-shrink: 0; 
+	white-space: normal; /* 內容允許自動換行 */
+  }
+
+  .horizontal-timeline-item.active {
+	display: flex; /* 當被選中顯示時，切換為flex排列 */
+  }
+
+  /* --- 每個活動事件 --- */
+  .timeline-event {
+	display: inline-block; 
+	width: 250px; 
+	margin-right: 20px; 
+	vertical-align: top;
+  }
+
+  /* --- 活動事件內的日期文字 & 內容 --- */
+  .timeline-date {
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 10px;
+  }
+
+  .timeline-info {
+	border: 1px solid #ccc;
+	background-color: #fff;
+	padding: 10px;
+	border-radius: 4px;
+	text-align: center;
+  }
+
+  .timeline-info img {
+	max-width: 100%;
+	border-radius: 4px;
+  }
+
+  .timeline-info h3 {
+	margin: 10px 0 5px 0;
+  }
+
+  .timeline-info p {
+	font-size: 0.9rem;
+	color: #666;
+  }
+
+  @media (max-width: 600px) {
+	.timeline-event {
+	  width: 200px; /* 手機等小螢幕下縮小一點 */
+	}
+  }
+
+    /* --- other experience section started --- */

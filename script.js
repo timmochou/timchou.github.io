@@ -124,3 +124,31 @@ document.addEventListener('DOMContentLoaded', function() {
 		});
 	});
 });
+// otehr experience section started
+const buttons = document.querySelectorAll('.activity-btn');
+  const timelineItems = document.querySelectorAll('.horizontal-timeline-item');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // 1. 先移除所有按鈕的active
+      buttons.forEach(b => b.classList.remove('active'));
+
+      // 2. 讓當前按下的按鈕變active
+      btn.classList.add('active');
+
+      // 3. 找到 data-activity，顯示對應的timeline item
+      const activityType = btn.getAttribute('data-activity');
+
+      // 4. 隱藏全部timeline-item
+      timelineItems.forEach(item => {
+        item.classList.remove('active');
+        // 這裡也可以選擇 display:none; 只是我們在CSS用了 .active 切換 
+      });
+
+      // 5. 顯示與按鈕對應的timeline-item
+      const targetItem = document.querySelector(`.horizontal-timeline-item[data-activity="${activityType}"]`);
+      if (targetItem) {
+        targetItem.classList.add('active');
+      }
+    });
+  });

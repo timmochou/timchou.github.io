@@ -477,56 +477,133 @@
 
 
 <!--   *** Other Experience Section Starts ***   -->
-<section class="other-experience" id="other-experience" style="background-color: #f5f5f5;">
-    <header class="section-heading">
-        <br/>
-        <h1>ACTIVITIES</h1>
-    </header>
-    
-    <!-- === Timeline Container Starts === -->
-    <div class="timeline-wrapper">
-        <div class="timeline-nav">
-            <button class="timeline-nav-btn active" data-year="2023">2023</button>
-            <button class="timeline-nav-btn" data-year="2022">2022</button>
-            <button class="timeline-nav-btn" data-year="2021">2021</button>
-        </div>
-        
-        <div class="timeline-content-wrapper">
-            <!-- 2023 Content -->
-            <div class="timeline-content-item active" data-year="2023">
-                <div class="timeline-image">
-                    <img src="images/Club/BASKETBALL_1.JPG" alt="Activity 1">
-                </div>
-                <div class="timeline-details">
-                    <h3>Public Finance Basketball Team Leader</h3>
-                    <p>2019-2923</p>
-                </div>
-            </div>
+<section class="other-experience" id="other-experience">
+	<header class="section-heading">
+	  <br/>
+	  <h1>ACTIVITIES</h1>
+	</header>
+	
+	<!-- === 活動分類按鈕 === -->
+	<div class="activity-buttons">
+	  <button class="activity-btn active" data-activity="club">社團活動</button>
+	  <button class="activity-btn" data-activity="competition">Competition</button>
+	  <button class="activity-btn" data-activity="workshop">Workshop</button>
+	</div>
+  
+	<!-- === 橫向時間軸容器 === -->
+	<div class="horizontal-timeline-container">
+	  <div class="horizontal-timeline-wrapper">
+  
+		<!-- ========== 社團活動 (club) ========== -->
+		<div class="horizontal-timeline-item active" data-activity="club">
+		  <!-- 你可以用多個timeline-event來代表不同年度或不同事件 -->
+		  <div class="timeline-event">
+			<div class="timeline-date">2020</div>
+			<div class="timeline-info">
+			  <img src="images/Club/BASKETBALL_4.JPG" alt="Activity 1">
+			  <h3>National Taipei University Basketball Team vice-captain</h3>
+			  <p>2021</p>
+			</div>
+		  </div>
+  
+		  <div class="timeline-event">
+			<div class="timeline-date">2022</div>
+			<div class="timeline-info">
+			  <img src="images/Club/BASKETBALL_3.jpg" alt="Activity 2">
+			  <h3>National Top 16 Finalist</h3>
+			  <p>Second time in the history of NTPU</p>
+			</div>
+		  </div>
+  
+		  <div class="timeline-event">
+			<div class="timeline-date">2022</div>
+			<div class="timeline-info">
+			  <img src="images/Club/BASKETBALL_2.jpg" alt="Activity 3">
+			  <h3>National Taipei University All Star game</h3>
+			</div>
+		  </div>
 
-            <!-- 2022 Content -->
-            <div class="timeline-content-item" data-year="2022">
-                <div class="timeline-image">
-                    <img src="images/Club/BASKETBALL_2.jpg" alt="Activity 2">
-                </div>
-                <div class="timeline-details">
-                    <h3>志愿者活动</h3>
-                    <p>在这里添加2022年活动的详细描述...</p>
-                </div>
-            </div>
-
-            <!-- 2021 Content -->
-            <div class="timeline-content-item" data-year="2021">
-                <div class="timeline-image">
-                    <img src="images/activity3.jpg" alt="Activity 3">
-                </div>
-                <div class="timeline-details">
-                    <h3>社团表演</h3>
-                    <p>在这里添加2021年活动的详细描述...</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+		  <div class="timeline-event">
+			<div class="timeline-date">2023</div>
+			<div class="timeline-info">
+			  <img src="images/Club/BASKETBALL_1.jpg" alt="Activity 3">
+			  <h3>Bastketball Team Captain of Public Finance</h3>
+			  <p></p>
+			</div>
+		  </div>
+		</div>
+  
+		<!-- ========== Competition ========== -->
+		<div class="horizontal-timeline-item" data-activity="competition">
+		  <div class="timeline-event">
+			<div class="timeline-date">2022</div>
+			<div class="timeline-info">
+			  <!-- 以下為範例圖片路徑 -->
+			  <img src="images/Competition/DOVE.jpg" alt="Competition 1">
+			  <h3>Uniliver Case Competition</h3>
+			  <p></p>
+			</div>
+		  </div>
+  
+		  <div class="timeline-event">
+			<div class="timeline-date">2022</div>
+			<div class="timeline-info">
+			  <img src="images/Competition/JP_MORGAN.jpg" alt="Competition 2">
+			  <h3>黑客松競賽</h3>
+			  <p>與團隊合作完成一項新穎的App，取得優秀成績。</p>
+			</div>
+		  </div>
+		  <div class="timeline-event">
+			<div class="timeline-date">2022</div>
+			<div class="timeline-info">
+			  <img src="images/Club/guitar.jpg" alt="Competition 2">
+			  <h3>guitar club violin</h3>
+			  <p>與團隊合作完成一項新穎的App，取得優秀成績。</p>
+			</div>
+		  </div>
+		</div>
+  
+		<!-- ========== Workshop ========== -->
+		<div class="horizontal-timeline-item" data-activity="workshop">
+		  <div class="timeline-event">
+			<div class="timeline-date">2021</div>
+			<div class="timeline-info">
+			  <img src="images/PROFESSIONAL EXPERIENCE/exploration_workshop.jpg" alt="Workshop 1">
+			  <h3>Exploration and Innovation Workshop</h3>
+			  <p>為期三天的基礎Python教學，吸引了數十位同學參與。</p>
+			</div>
+		  </div>
+  
+		  <div class="timeline-event">
+			<div class="timeline-date">2022</div>
+			<div class="timeline-info">
+			  <img src="images/PROFESSIONAL EXPERIENCE/AWS_RECAP1.jpg" alt="Workshop 2">
+			  <h3>AWS </h3>
+			  <p>學習基礎介面設計概念，並以團隊方式討論專案。</p>
+			</div>
+		  </div>
+		  <div class="timeline-event">
+			<div class="timeline-date">2022</div>
+			<div class="timeline-info">
+			  <img src="images/PROFESSIONAL EXPERIENCE/AWS_WORKSHOP.jpg" alt="Workshop 2">
+			  <h3>AWS </h3>
+			  <p>學習基礎介面設計概念，並以團隊方式討論專案。</p>
+			</div>
+		  </div>
+		  <div class="timeline-event">
+			<div class="timeline-date">2023</div>
+			<div class="timeline-info">
+			  <img src="images/PROFESSIONAL EXPERIENCE/Korean_workshop.jpg" alt="Workshop 2">
+			  <h3>Korean Workshop</h3>
+			  <p>學習基礎介面設計概念，並以團隊方式討論專案。</p>
+			</div>
+		  </div>
+		</div>
+  
+	  </div> <!-- .horizontal-timeline-wrapper -->
+	</div> <!-- .horizontal-timeline-container -->
+  
+  </section>
 <!--   *** Other Experience Section Ends ***   -->
 
 
@@ -578,7 +655,7 @@
 		<!--   === Contact Details Ends ===   -->
 		<!--   === Contact Form Starts ===   -->
 		
-		<form action="https://formsubmit.co/nolliechy@gmail.com" method="POST" class="contact-form">
+		<form action="https://formsubmit.co/yenting608@gmail.com" method="POST" class="contact-form">
 			<div class="input-element name-input">
 				<input type="text" name="name" placeholder="Your Name" required>
 			</div>
@@ -586,7 +663,7 @@
 				<input type="email" name="email" placeholder="Your Email" required>
 			</div>
 			<div class="text-area">
-				<textarea type="text" name="message" placeholder="Your Message" required></textarea>
+				<textarea name="message" placeholder="Your Message" required></textarea>
 			</div>
 			<div class="form-button-container">
 				<input type="submit" value="Send Message" class="btn form-btn">
