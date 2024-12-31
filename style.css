@@ -1030,7 +1030,7 @@ section.page-footer{
   font-weight: 500;
 }
 
-/* 通用进度条样��� */
+/* 通用进度条样式 */
 .bar {
   background-color: #f0f0f0;  
   height: 30px;
@@ -1595,70 +1595,209 @@ section.page-footer{
 
   /* --- 橫向時間軸容器 --- */
   .horizontal-timeline-container {
-	width: 90%;
-	width: 90%;
+	width: 80%;
 	margin: 0 auto;
-	overflow-x: auto; /* 允許橫向滾動 */
-	white-space: nowrap; /* 防止內部元素換行 */
+	height: 600px;
+	position: relative;
+	overflow-x: auto;
+	overflow-y: hidden;
+	display: flex;
+	justify-content: flex-start;
   }
 
   .horizontal-timeline-wrapper {
+	height: 100%;
 	display: flex;
-	gap: 40px;
+	padding: 20px;
+	justify-content: flex-start;
   }
 
-  /* --- 單一活動區塊 (對應每個分類) --- */
+  /* --- 單一活動區塊 --- */
   .horizontal-timeline-item {
-	display: none; /* 預設隱藏 */
-	flex-shrink: 0; 
-	white-space: normal; /* 內容允許自動換行 */
+	display: none;
+	height: 100%;
+	justify-content: flex-start;
+	padding-left: 10%;
   }
 
   .horizontal-timeline-item.active {
-	display: flex; /* 當被選中顯示時，切換為flex排列 */
+	display: flex;
+	flex-wrap: nowrap;
+	gap: 20px;
+	justify-content: flex-start;
+	align-items: center;
   }
 
   /* --- 每個活動事件 --- */
   .timeline-event {
-	display: inline-block; 
-	width: 250px; 
-	margin-right: 20px; 
-	vertical-align: top;
-  }
-
-  /* --- 活動事件內的日期文字 & 內容 --- */
-  .timeline-date {
-	font-weight: bold;
-	text-align: center;
-	margin-bottom: 10px;
+	flex: 0 0 300px;
+	height: 500px;
+	background: white;
+	padding: 15px;
+	border-radius: 8px;
+	box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin: 0 10px;
   }
 
   .timeline-info {
-	border: 1px solid #ccc;
-	background-color: #fff;
-	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	overflow-y: auto;
+  }
+
+  /* 美化 timeline-info 的滾動條 */
+  .timeline-info::-webkit-scrollbar {
+	width: 5px;
+  }
+
+  .timeline-info::-webkit-scrollbar-track {
+	background: #f1f1f1;
+  }
+
+  .timeline-info::-webkit-scrollbar-thumb {
+	background: #888;
 	border-radius: 4px;
-	text-align: center;
+  }
+
+  .timeline-info::-webkit-scrollbar-thumb:hover {
+	background: #555;
   }
 
   .timeline-info img {
-	max-width: 100%;
+	width: 100%;
+	height: 200px;
+	object-fit: cover;
 	border-radius: 4px;
+	flex-shrink: 0;
   }
 
   .timeline-info h3 {
-	margin: 10px 0 5px 0;
+	margin: 10px 0;
+	font-size: 1.1em;
+	flex-shrink: 0;
   }
 
   .timeline-info p {
-	font-size: 0.9rem;
-	color: #666;
+	overflow: visible;
+	margin-bottom: 10px;
+	line-height: 1.5;
+	flex: 1;
   }
 
-  @media (max-width: 600px) {
-	.timeline-event {
-	  width: 200px; /* 手機等小螢幕下縮小一點 */
+  /* 移除 max-height 限制和 expanded 類 */
+  .timeline-info p.expanded {
+	max-height: none;
+  }
+
+  .read-more-btn {
+	display: none;
+  }
+
+  /* 主容器的水平滾動條 */
+  .horizontal-timeline-container::-webkit-scrollbar {
+	height: 8px;
+  }
+
+  .horizontal-timeline-container::-webkit-scrollbar-track {
+	background: #f1f1f1;
+  }
+
+  .horizontal-timeline-container::-webkit-scrollbar-thumb {
+	background: #888;
+	border-radius: 4px;
+  }
+
+  .horizontal-timeline-container::-webkit-scrollbar-thumb:hover {
+	background: #555;
+  }
+
+  /* 確保時間軸事件水平排列 */
+  @media (max-width: 1400px) {
+	.horizontal-timeline-item.active {
+	  min-width: max-content;
 	}
   }
 
-    /* --- other experience section started --- */
+.timeline-date {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #213555;
+}
+
+.timeline-event {
+    flex: 0 0 300px;
+    height: 500px;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.timeline-info {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: hidden;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.timeline-info.expanded {
+    overflow-y: auto;
+}
+
+.timeline-info p {
+    margin-bottom: 10px;
+    line-height: 1.5;
+    max-height: 60px;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.timeline-info.expanded p {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.read-more-btn {
+    display: block;
+    background: none;
+    border: none;
+    color: #213555;
+    cursor: pointer;
+    font-size: 0.9rem;
+    padding: 2px 5px;
+    text-decoration: underline;
+    margin-top: 10px;
+}
+
+/* 自定义滚动条样式 */
+.timeline-info p::-webkit-scrollbar {
+    width: 6px;
+}
+
+.timeline-info p::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.timeline-info p::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+}
+
+.timeline-info p::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

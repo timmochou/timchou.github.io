@@ -91,6 +91,8 @@ document.addEventListener('DOMContentLoaded', function() {
 	// 預設顯示 Front-end
 	document.querySelector('.front-end').classList.remove('hidden');
 	document.querySelector('.front-end').classList.add('active');
+
+	
 });
 
 // 等待 DOM 完全加载
@@ -126,29 +128,142 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 // otehr experience section started
 const buttons = document.querySelectorAll('.activity-btn');
-  const timelineItems = document.querySelectorAll('.horizontal-timeline-item');
+const timelineItems = document.querySelectorAll('.horizontal-timeline-item');
 
-  buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      // 1. 先移除所有按鈕的active
-      buttons.forEach(b => b.classList.remove('active'));
+buttons.forEach(btn => {
+	btn.addEventListener('click', () => {
+		// 移除所有按鈕的 active 類
+		buttons.forEach(b => b.classList.remove('active'));
+		// 添加當前按鈕的 active 類
+		btn.classList.add('active');
 
-      // 2. 讓當前按下的按鈕變active
-      btn.classList.add('active');
+		// 隱藏所有 timeline items
+		timelineItems.forEach(item => {
+			item.style.display = 'none';
+			item.classList.remove('active');
+		});
 
-      // 3. 找到 data-activity，顯示對應的timeline item
-      const activityType = btn.getAttribute('data-activity');
+		// 顯示對應的 timeline item
+		const activity = btn.getAttribute('data-activity');
+		const targetItem = document.querySelector(`.horizontal-timeline-item[data-activity="${activity}"]`);
+		if (targetItem) {
+			targetItem.style.display = 'block';
+			targetItem.classList.add('active');
+			
+			// 重新初始化該項目中的 Read More 功能
+			initReadMore(targetItem);
+		}
+	});
+});
 
-      // 4. 隱藏全部timeline-item
-      timelineItems.forEach(item => {
-        item.classList.remove('active');
-        // 這裡也可以選擇 display:none; 只是我們在CSS用了 .active 切換 
-      });
+// 初始化 Read More 功能的函數
+function initReadMore(container) {
+	const timelineInfos = container.querySelectorAll('.timeline-info');
+	
+	timelineInfos.forEach(info => {
+		const existingBtn = info.querySelector('.read-more-btn');
+		if (existingBtn) {
+			existingBtn.remove();
+		}
 
-      // 5. 顯示與按鈕對應的timeline-item
-      const targetItem = document.querySelector(`.horizontal-timeline-item[data-activity="${activityType}"]`);
-      if (targetItem) {
-        targetItem.classList.add('active');
-      }
-    });
-  });
+		const content = info.querySelector('p');
+		if (content && content.scrollHeight > 60) {
+			const readMoreBtn = document.createElement('button');
+			readMoreBtn.className = 'read-more-btn';
+			readMoreBtn.textContent = 'Read More';
+			
+			readMoreBtn.addEventListener('click', () => {
+				if (info.classList.contains('expanded')) {
+					info.classList.remove('expanded');
+					readMoreBtn.textContent = 'Read More';
+					content.style.maxHeight = '60px'; // 收起时设置最大高度
+					content.style.overflow = 'hidden';
+				} else {
+					info.classList.add('expanded');
+					readMoreBtn.textContent = 'Show Less';
+					content.style.maxHeight = '300px'; // 展开时设置最大高度
+					content.style.overflow = 'auto'; // 添加滚动条
+				}
+			});
+
+			info.appendChild(readMoreBtn);
+		}
+	});
+}
+
+// 初始化第一個活動項目的 Read More 功能
+const firstItem = document.querySelector('.horizontal-timeline-item.active');
+if (firstItem) {
+	initReadMore(firstItem);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+	const buttons = document.querySelectorAll('.activity-btn');
+	const timelineItems = document.querySelectorAll('.horizontal-timeline-item');
+
+	// 初始化：顯示第一個項目
+	if (timelineItems.length > 0) {
+		timelineItems[0].style.display = 'flex';
+		initReadMore(timelineItems[0]);
+	}
+
+	buttons.forEach(btn => {
+		btn.addEventListener('click', () => {
+			buttons.forEach(b => b.classList.remove('active'));
+			btn.classList.add('active');
+
+			timelineItems.forEach(item => {
+				item.style.display = 'none';
+				// 重置所有展開狀態
+				const timelineInfos = item.querySelectorAll('.timeline-info');
+				timelineInfos.forEach(info => {
+					info.classList.remove('expanded');
+					const btn = info.querySelector('.read-more-btn');
+					if (btn) btn.textContent = 'Read More';
+				}); 
+			});
+
+			const activity = btn.getAttribute('data-activity');
+			const targetItem = document.querySelector(`.horizontal-timeline-item[data-activity="${activity}"]`);
+			if (targetItem) {
+				targetItem.style.display = 'flex';
+				initReadMore(targetItem);
+			}
+		});
+	});
+
+	function initReadMore(container) {
+		const timelineInfos = container.querySelectorAll('.timeline-info');
+		
+		timelineInfos.forEach(info => {
+			const existingBtn = info.querySelector('.read-more-btn');
+			if (existingBtn) {
+				existingBtn.remove();
+			}
+
+			const content = info.querySelector('p');
+			if (content && content.scrollHeight > 60) {
+				const readMoreBtn = document.createElement('button');
+				readMoreBtn.className = 'read-more-btn';
+				readMoreBtn.textContent = 'Read More';
+				
+				readMoreBtn.addEventListener('click', () => {
+					if (info.classList.contains('expanded')) {
+						info.classList.remove('expanded');
+						readMoreBtn.textContent = 'Read More';
+						content.style.maxHeight = '60px'; // 收起时设置最大高度
+						content.style.overflow = 'hidden';
+					} else {
+						info.classList.add('expanded');
+						readMoreBtn.textContent = 'Show Less';
+						content.style.maxHeight = '300px'; // 展开时设置最大高度
+						content.style.overflow = 'auto'; // 添加滚动条
+					}
+				});
+
+				info.appendChild(readMoreBtn);
+			}
+		});
+	}
+});
+
